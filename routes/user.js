@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-	res.send('get users');
+	res.render('users/home_user', { title: 'Hola usuario' });
 });
 
 router.put('/', (req, res) => {
