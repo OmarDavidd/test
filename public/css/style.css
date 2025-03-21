@@ -1,0 +1,49 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Contenedor del navbar */
+.navbar {
+    background-color: #333; /* Fondo oscuro */
+    padding: 10px 20px; /* Espaciado interno */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Lista de elementos del navbar */
+.nav-list {
+    list-style: none; /* Quita los puntos de la lista */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Hace que los elementos estén en línea */
+    justify-content: flex-start; /* Alinea los elementos a la izquierda */
+}
+
+/* Elementos de la lista */
+.nav-item {
+    margin-right: 20px; /* Espacio entre elementos */
+}
+
+/* Enlaces del navbar */
+.nav-link {
+    text-decoration: none; /* Quita el subrayado */
+    color: #fff; /* Color del texto */
+    font-size: 16px;
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 4px; /* Bordes redondeados */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+/* Efecto hover (cuando el cursor pasa por encima) */
+.nav-link:hover {
+    background-color: #555; /* Fondo más claro */
+    color: #ffcc00; /* Cambia el color del texto */
+}
+
+/* Estilo para el enlace activo (opcional) */
+.nav-link.active {
+    background-color: #ffcc00; /* Fondo amarillo */
+    color: #333; /* Texto oscuro */
+}

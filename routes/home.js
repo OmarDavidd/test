@@ -1,38 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const homeController = require('../controllers/home_controller');
 
-router.get('/', (req, res) => {
-	const productos = [
-		{
-			nombre: 'Gallina',
-			precio: 10.4
-		},
-		{
-			nombre: 'Gallina2',
-			precio: 10.4
-		},
-		{
-			nombre: 'Gallina3',
-			precio: 10.4
-		},
-		{
-			nombre: 'Gallina4',
-			precio: 10.4
-		}
-	];
-	res.render('home/index', { titulo: '<i>Hola<i>', productos });
-});
-
-router.put('/', (req, res) => {
-	res.send('put home');
-});
-
-router.post('/', (req, res) => {
-	res.send('post home');
-});
-
-router.delete('/', (req, res) => {
-	res.send('delete home');
-});
+router.get('/', (req, res) => homeController.getHome(req, res));
+router.put('/', (req, res) => homeController.updateHome(req, res));
+router.post('/', (req, res) => homeController.addHome(req, res));
+router.delete('/', (req, res) => homeController.deleteHome(req, res));
 
 module.exports = router;
