@@ -12,23 +12,18 @@ Equipos.init(
 		},
 		nombre: {
 			type: DataTypes.STRING,
-			allowNull: false
 		},
 		pais: {
 			type: DataTypes.STRING,
-			allowNull: false
 		},
 		ciudad: {
 			type: DataTypes.STRING,
-			allowNull: false
 		},
 		fundacion: {
 			type: DataTypes.DATE,
-			allowNull: false
 		},
 		champions_ganados: {
 			type: DataTypes.INTEGER,
-			allowNull: false
 		},
 	},
 	{
