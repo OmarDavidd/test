@@ -4,7 +4,7 @@ const path = require('path');
 const routes = require('./routes');
 const express_layouts = require('express-ejs-layouts');
 const sequelize = require('./db/database');
-
+const Equipos = require('./models/equipos');
 
 const app = express();
 

@@ -1,24 +1,13 @@
+const Equipos = require('../models/equipos');
+
 const homeService = {
-	getDataHome: () => {
-		const productos = [
-			{
-				nombre: 'Gallina',
-				precio: 10.4
-			},
-			{
-				nombre: 'Gallina2',
-				precio: 10.4
-			},
-			{
-				nombre: 'Gallina3',
-				precio: 10.4
-			},
-			{
-				nombre: 'Gallina4',
-				precio: 10.4
-			}
-		];
-		return productos;
+	getDataHome: async () => {
+		try {
+			const data = await Equipos.findAll();
+			return { msg: null, data };
+		} catch (error) {
+			return { msg: error.message, data: [] };
+		}
 	},
 	addItem: (req, res) => {
 		return 'AddItem service';

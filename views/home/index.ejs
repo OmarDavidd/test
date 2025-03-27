@@ -1,21 +1,30 @@
-<h4>Hola a mi home</h4>
-<div>
-	<h6>Lista de productos</h6>
-	<table>
-		<thead>
-			<tr>
-				<th>Nombre</th>
-				<th>Precio</th>
-			</tr>
-		</thead>
-		<tbody>
-			<% ps.forEach(p => { %>
-				<tr>
-					<td><%= p.nombre %></td>
-					<td><%= p.precio %></td>
-				</tr>
-			<% }); %>
-		</tbody>
-
-	</table>
+<div class="max-w-7xl mx-auto px-4 py-8">
+	<h4 class="text-2xl font-bold text-gray-800 mb-6">Hola a mi home</h4>
+	<div class="bg-white">
+			<h6 class="text-lg font-semibold text-gray-700 px-6 py-4">Lista de productos</h6>
+			<div >
+					<table class="min-w-full ">
+							<thead>
+									<tr class="bg-gray-100 text-left">
+											<th class="px-6 py-3 text-gray-700">Nombre</th>
+											<th class="px-6 py-3 text-gray-700">Pais</th>
+											<th class="px-6 py-3 text-gray-700">Ciudad</th>
+											<th class="px-6 py-3 text-gray-700">Fundacion</th>
+											<th class="px-6 py-3 text-gray-700">Champions Ganadas</th>
+									</tr>
+							</thead>
+							<tbody class="bg-white divide-y ">
+									<% ps.forEach(p => { %>
+											<tr class="hover:bg-gray-50 transition duration-150 ease-in-out">
+													<td class="px-6 py-4 text-gray-900"><%= p.nombre %></td>
+													<td class="px-6 py-4 text-gray-500"><%= p.pais %></td>
+													<td class="px-6 py-4 text-gray-500"><%= p.ciudad %></td>
+													<td class="px-6 py-4 text-gray-500"><%= p.fundacion %></td>
+													<td class="px-6 py-4 text-gray-500"><%= p.champions_ganados %></td>
+											</tr>
+									<% }); %>
+							</tbody>
+					</table>
+			</div>
+	</div>
 </div>

@@ -20,11 +20,12 @@ Equipos.init(
 			type: DataTypes.STRING,
 		},
 		fundacion: {
-			type: DataTypes.DATE,
+			type: DataTypes.INTEGER,
 		},
 		champions_ganados: {
 			type: DataTypes.INTEGER,
 		},
+
 	},
 	{
 		sequelize,
@@ -33,3 +34,5 @@ Equipos.init(
 		timestamps: false
 	}
 );
+
+module.exports = Equipos;
