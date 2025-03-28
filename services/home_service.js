@@ -9,6 +9,18 @@ const homeService = {
 			return { msg: error.message, data: [] };
 		}
 	},
+	getUserById: async (id) => {
+
+		try {
+
+			const equipos = await Equipos.findAll({ where: { id_equipo: id } });
+
+
+			return { msg: null, data: equipos[0] };
+		} catch (error) {
+			return { msg: error.message, data: [] };
+		}
+	},
 	addItem: (req, res) => {
 		return 'AddItem service';
 	},

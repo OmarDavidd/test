@@ -11,6 +11,7 @@
 											<th class="px-6 py-3 text-gray-700">Ciudad</th>
 											<th class="px-6 py-3 text-gray-700">Fundacion</th>
 											<th class="px-6 py-3 text-gray-700">Champions Ganadas</th>
+											<th class="px-6 py-3 text-gray-700">Acciones </th>
 									</tr>
 							</thead>
 							<tbody class="bg-white divide-y ">
@@ -21,6 +22,7 @@
 													<td class="px-6 py-4 text-gray-500"><%= p.ciudad %></td>
 													<td class="px-6 py-4 text-gray-500"><%= p.fundacion %></td>
 													<td class="px-6 py-4 text-gray-500"><%= p.champions_ganados %></td>
+													<td class="px-6 py-4 text-gray-500"><a href="/<%= p.item %>">Ver</a></td>
 											</tr>
 									<% }); %>
 							</tbody>
