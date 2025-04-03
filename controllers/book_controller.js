@@ -1,6 +1,6 @@
-const homeService = require('../services/home_service');
+const estadioController = require('../services/book_service');
 
-const homeController = {
+const estadioController = {
 	getHome: async (req, res) => {
 		try {
 			const resp = await homeService.getDataHome();
