@@ -1,29 +1,52 @@
-const Equipos = require('../models/equipos');
+const Libros = require('../models/libros');
 
-const homeService = {
-	getDataHome: async () => {
+const librosService = {
+	getData: async () => {
 		try {
-			const data = await Equipos.findAll();
+			const data = await Libros.findAll();
+
 			return { msg: null, data };
 		} catch (error) {
 			return { msg: error.message, data: [] };
 		}
 	},
-	getUserById: async (id) => {
-
+	getById: async (id) => {
 		try {
-
-			const equipos = await Equipos.findOne({ where: { id_equipo: id } });
-			console.log('equipos', equipos, id);
-
-
-			return { msg: null, data: equipos };
+			const libro = await Libros.findOne({ where: { id_libro: id } });
+			return { msg: null, data: libro };
 		} catch (error) {
 			return { msg: error.message, data: [] };
 		}
 	},
-	addItem: (req, res) => {
-		return 'AddItem service';
+	updateBook: async (id, data) => {
+		try {
+			const libro = await Libros.findByPk(id);
+
+			await libro.update(data);
+			return { msg: null, data: libro };
+		} catch (error) {
+			return { msg: error.message, data: [] };
+		}
 	},
+	addBook: async (data) => {
+		try {
+			const libro = await Libros.create(data);
+
+			return { msg: null, data: libro };
+		} catch (error) {
+			return { msg: error.message, data: [] };
+		}
+	},
+	deleteBook: async (id) => {
+		try {
+			console.log('data', id);
+
+			const libro = await Libros.findByPk(id);
+			libro.destroy();
+			return { msg: null, data: libro };
+		} catch (error) {
+			return { msg: error.message, data: [] };
+		}
+	}
 }
-module.exports = homeService;
+module.exports = librosService;

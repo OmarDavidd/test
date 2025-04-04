@@ -1,41 +1,55 @@
-const estadioController = require('../services/book_service');
+const bookSevice = require('../services/book_service');
 
-const estadioController = {
-	getHome: async (req, res) => {
+const bookController = {
+	getAll: async (req, res) => {
 		try {
-			const resp = await homeService.getDataHome();
+			const resp = await bookSevice.getData();
 			if (!resp.msg) {
-				return res.render('home/index', { title: 'Home App', ps: resp.data });
+				return res.send(resp.data);
 			}
 			return res.render('Error404', { title: 'GetHome', error: resp.msg });
 		} catch (error) {
 			return res.status(500).json({ msg: error.message });
 		}
 	},
-
-	addHome: (req, res) => {
-		return res.send('AddHome controller');
-
-	},
 	getById: async (req, res) => {
 		try {
-			const resp = await homeService.getUserById(req.params.id);
-			console.log('resp', resp);
-
-			res.render('home/show', { title: 'Show equipo', p: resp.data });
+			const resp = await bookSevice.getById(req.params.id);
+			return res.send(resp.data);
 		} catch (error) {
 			return res.status(500).json({ msg: error.message });
 		}
 
 	},
-	updateHome: (req, res) => {
-		return res.send('UpdateHome controller');
+	updateBook: async (req, res) => {
+		try {
+			const resp = await bookSevice.updateBook(req.params.id, req.body);
+			return res.send(resp.data);
+		} catch (error) {
+			return res.status(500).json({ msg: error.message });
+		}
 
 	},
-	deleteHome: (req, res) => {
-		return res.send('DeleteHome controller');
+	addBook: async (req, res) => {
+		try {
+
+			const resp = await bookSevice.addBook(req.body);
+
+			return res.send(resp.data);
+		} catch (error) {
+			return res.status(500).json({ msg: error.message });
+		}
+
+	},
+	deleteBook: async (req, res) => {
+		try {
+			const resp = await bookSevice.deleteBook(req.params.id);
+			return res.send(resp.data);
+		} catch (error) {
+			return res.status(500).json({ msg: error.message });
+		}
 
 	}
 }
 
-module.exports = homeController;
+module.exports = bookController;

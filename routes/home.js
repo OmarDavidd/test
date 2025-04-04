@@ -8,4 +8,4 @@ router.put('/', (req, res) => homeController.updateHome(req, res));
 router.post('/', (req, res) => homeController.addHome(req, res));
 router.delete('/', (req, res) => homeController.deleteHome(req, res));
 
-module.exports = router;
+module.exports = router; 
